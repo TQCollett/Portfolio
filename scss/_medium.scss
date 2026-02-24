@@ -1,0 +1,182 @@
+header {
+    padding: 2rem $gutter;
+    h2{
+        font-size:2rem;
+    }
+    img#logo{
+        width:80px;
+        height:80px;
+    }
+}
+#hamburger{display:none;}
+
+img#hamburger{
+    width: 40px;
+    height: 40px;
+}
+
+#fishSpecies{
+  grid-template-columns: 1fr 1fr;
+}
+//footer styling
+footer div{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:$gutter;
+}
+// Fish tank page
+.allcards{
+    display: flex;
+    flex-wrap: wrap;
+    gap:$gutter;
+    justify-content: center;
+    section{
+        flex-basis:calc(50% - ($gutter/2));
+    }
+}
+// checklist page
+#titleHero{
+    h1{
+        font-size:1.75rem;
+    }
+}
+
+#check{
+    flex-basis:calc(50% - ($gutter/2));
+}
+#navWrapper.hide{
+    display:block;
+    background-color: $primaryColor;
+    #menuItems{
+        display:flex;
+        .nonactive, .active:hover{
+            background-color:$secondaryColor;
+        }
+        .active, .nonactive:hover{
+            background-color: $primaryColor;
+        }
+
+        li{
+            flex-basis: 25%;
+            text-align:center;
+            border:none;
+            border-right:1px solid black;
+        }
+        li:last-child{
+            border:none;
+        }
+        li ul{
+            display:flex;
+            position:absolute;
+            left:-999rem;
+            z-index:10;
+            flex-direction: column;
+            li{
+                padding:0px;
+                margin:0px;
+                background-color:$secondaryColor;
+                text-align: left;
+                border-radius:0 0 0 0;
+                border-bottom: 1px solid black;
+            }
+        }
+        li:hover ul{
+            left:auto;
+        }
+  
+    }//end of menuitems
+}//end of navwrapper
+
+#checkListHead{
+    ion-icon{
+        display:none;
+    }
+}
+// Create the for loop for about us page
+@for $i from 1 through 12 {
+  $w: calc($i /12) *100%;
+  .medium-#{$i} {flex-basis: $w}
+}
+
+body{
+    display:block;
+}
+
+#navlinks, .hamburger{
+  display:none;
+}
+
+
+// Conference page styling
+.heroVideo{
+  text-align: left;
+  h1{
+    font-size:2rem;
+
+  }
+  p{
+    font-size:1.5rem;
+  }
+}
+
+.column.flip{
+    height:200px;
+}
+// services page
+.swiper{
+    .sliderText{
+        top:50%;
+        left:5%;
+        right:30%;
+        text-align:left;
+    }
+}
+
+//recommendations page
+#recommendations{
+  section{
+    display:grid;
+    background-color: white;
+    border-radius: 16px 16px 0 0;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "image name"
+    "image address"
+    "image URL";
+    border-radius: 0px;
+    h2, div, a{
+        align-self: center;
+    }
+    h2{
+        background-color: white;
+        color:$primaryColor;
+        text-shadow:none;
+        font-weight:bold;
+    }
+    a{
+        width:95%;
+        margin:auto;
+    }
+  }//End of Section
+}//End of #recommendations
+
+
+//single page nav
+#navSingleWrapper{
+  #singlePageMenu{
+    li{
+      a{
+        span{
+          display:block;
+          padding:$gutter;
+        }
+        img{
+            display:none;
+        }
+      }//end of a
+    }//end of li
+    li.active{
+      background-color: darken($secondaryColor, 10%);
+    }
+  }//end of singlePageMenu id
+}//end of menu
