@@ -1,83 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="canonical" href="/" />
-    <title>Single Page Portfolio | Jube's Aquariums</title>
-    <meta name="description" content="Aquarium recommendations from Jube's Aquariums">
-    <meta name="author" content="Tyler Collett">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="css/styles.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
-    
-    <!--fav icon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body id="singlePageBody">
-    <div id="headerWrapper">
-        <header>
-            <a href="/index.html"><img src="img/fishLogo1x.png" alt="Tyler Design Logo" height="66" width="101" srcset="img/fishLogo1x.png 1x, img/fishLogo2x.png 2x, img/fishLogo3x.png 3x"></a>
-            <h2>
-                Jube's Aquariums
-            </h2>
-        </header>
-    </div>
-    <div id="navSingleWrapper">
-        <nav>
-            <ul id="singlePageMenu">
-                <li class="active"><a href="#home"><img src="img/arrow.svg"><span>Start</span></a></li>
-                <li><a href="#about"><img src="img/arrow.svg"><span>About Us</span></a></li>
-                <li><a href="#services"><img src="img/arrow.svg"><span>Our Services</span></a></li>
-                <li><a href="#form"><img src="img/arrow.svg"><span>Keep in Touch</span></a></li>
+<body>
 
-            </ul>
-        </nav>
-    </div>
-    <div id="mainWrapperSingle">
-        <main>
-            <section id="home">
-            </section>
-            <section id="about">
-            </section>
-            <section id="services">
-            </section>
-            <section id="form">
-            </section>
+<div class="layout">
 
-        </main>
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span class="name">Alex Morgan</span>
+      <span class="role">Designer &amp; Developer</span>
     </div>
-    <div id="footerWrapper">
-        <footer>
-            <div class="footerSections">
-                <div class="contact">
-                    <p><ion-icon name="people-outline"></ion-icon>Tyler Collett</p>
-                    <p><ion-icon name="desktop-outline"></ion-icon>Web Design and Developer</p>
-                    <p><a href="/index.html"><ion-icon name="planet-outline"></ion-icon>Tyler Collett Design</a></p>
-                    <p><a href="tel:1234567890"><ion-icon name="phone-portrait-outline"></ion-icon>123-456-7890</a></p>
 
-                </div>
-                <div class="socials">
-                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="https://www.tiktok.com/@jubesaquariums?is_from_webapp=1&sender_device=pc"><ion-icon name="logo-tiktok"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
-                </div>
-                <div class="location">
-                    <address>Tyler Collett Design<br>1234 Average Avenue<br>Someplace, Utah, 12345</address>
-                </div>
+    <nav>
+      <a data-page="home" class="active" onclick="navigate(event,'home')">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><polyline points="9 21 9 12 15 12 15 21"/></svg>
+        <span>Home</span>
+      </a>
+      <a data-page="about" onclick="navigate(event,'about')">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>About</span>
+      </a>
+      <a data-page="resume" onclick="navigate(event,'resume')">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="13" y2="15"/></svg>
+        <span>Resume</span>
+      </a>
+      <a data-page="casestudies" onclick="navigate(event,'casestudies')">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <span>Case Studies</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">© 2026</div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="main">
+
+    <!-- ════ HOME ════ -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-eyebrow"><span class="tag">Available for work</span></div>
+        <h1>Hi, I'm <span>Alex</span><br/>I build digital<br/>experiences.</h1>
+        <p class="hero-sub">Full-stack developer &amp; UX designer crafting products that are fast, accessible, and delightful to use.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" onclick="navigate(event,'casestudies')">View My Work</a>
+          <a class="btn btn-outline" onclick="navigate(event,'about')">About Me</a>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="num">5<span>+</span></div><div class="label">Years experience</div></div>
+        <div class="stat"><div class="num">30<span>+</span></div><div class="label">Projects shipped</div></div>
+        <div class="stat"><div class="num">12<span>+</span></div><div class="label">Happy clients</div></div>
+      </div>
+
+      <hr class="divider"/>
+
+      <p class="section-label">Featured Work</p>
+      <div class="featured-grid">
+        <div class="card" onclick="navigate(event,'casestudies')">
+          <div class="card-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>SaaS Dashboard Redesign</h3>
+          <p>Reduced churn by 22% with a data-driven UX overhaul.</p>
+        </div>
+        <div class="card" onclick="navigate(event,'casestudies')">
+          <div class="card-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>E-Commerce Platform</h3>
+          <p>Built a headless storefront serving 50k+ monthly users.</p>
+        </div>
+        <div class="card" onclick="navigate(event,'casestudies')">
+          <div class="card-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>Real-Time Analytics Tool</h3>
+          <p>Engineered a WebSocket-driven dashboard for live KPIs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ ABOUT ════ -->
+    <section id="about" class="page">
+      <p class="section-label">About Me</p>
+      <h1>Designer. Developer.<br/>Problem solver.</h1>
+      <hr class="divider"/>
+
+      <div class="about-grid">
+        <div>
+          <h2>Who I Am</h2>
+          <p>I'm Alex Morgan, a full-stack developer and UX designer based in San Francisco. I bridge the gap between design and engineering — I care just as much about pixel-perfect interfaces as I do about clean, maintainable code.</p>
+          <br/>
+          <p>When I'm not shipping products, you'll find me hiking, contributing to open-source, or experimenting with generative art.</p>
+
+          <hr class="divider"/>
+
+          <h2>Skills</h2>
+          <div class="skill-list">
+            <span class="skill-pill">React</span><span class="skill-pill">TypeScript</span>
+            <span class="skill-pill">Node.js</span><span class="skill-pill">Python</span>
+            <span class="skill-pill">Figma</span><span class="skill-pill">PostgreSQL</span>
+            <span class="skill-pill">Docker</span><span class="skill-pill">AWS</span>
+            <span class="skill-pill">GraphQL</span><span class="skill-pill">Tailwind CSS</span>
+          </div>
+
+          <hr class="divider"/>
+
+          <h2>Timeline</h2>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <div><div class="tl-year">2024 – Present</div><h3>Senior Product Engineer</h3><p>Acme Corp — Leading frontend architecture for a B2B SaaS suite.</p></div>
             </div>
-            <p class="legal">&copy; <span id="year"></span> &bull; Tyler Collett &bull; Single Page Website</p>
-        </footer>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="js/scriptssingle.js"></script>
+            <div class="tl-item">
+              <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <div><div class="tl-year">2022 – 2024</div><h3>UX Engineer</h3><p>Studio Blaze — Designed and built client products from prototype to production.</p></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot-col"><div class="tl-dot"></div></div>
+              <div><div class="tl-year">2019 – 2022</div><h3>Front-End Developer</h3><p>Freelance — Worked with startups across fintech, health, and e-commerce.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="avatar-box">🧑‍💻</div>
+          <br/>
+          <h3>Contact</h3>
+          <br/>
+          <p style="font-size:.875rem;">alex@example.com</p>
+          <p style="font-size:.875rem;margin-top:.3rem;">San Francisco, CA</p>
+          <br/>
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
+            <span class="tag">GitHub</span>
+            <span class="tag">LinkedIn</span>
+            <span class="tag">Dribbble</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ RESUME ════ -->
+    <section id="resume" class="page">
+      <div class="resume-header">
+        <div>
+          <p class="section-label">Resume</p>
+          <h1>Alex Morgan</h1>
+          <p style="margin-top:.4rem;">Full-Stack Developer &amp; UX Designer &nbsp;·&nbsp; alex@example.com</p>
+        </div>
+        <a class="btn btn-primary" href="#">Download PDF</a>
+      </div>
+
+      <div class="resume-section">
+        <h2>Experience</h2>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><h3>Senior Product Engineer</h3><div class="company">Acme Corp</div></div>
+            <span class="dates">Jan 2024 – Present</span>
+          </div>
+          <ul>
+            <li>Architected a React component library adopted across 4 product teams.</li>
+            <li>Reduced page load time by 40% through code-splitting and CDN optimisation.</li>
+            <li>Mentored 3 junior engineers and led bi-weekly design-eng syncs.</li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><h3>UX Engineer</h3><div class="company">Studio Blaze</div></div>
+            <span class="dates">Jun 2022 – Dec 2023</span>
+          </div>
+          <ul>
+            <li>Designed and shipped 8 client products end-to-end in Figma → React.</li>
+            <li>Established an accessibility audit process achieving WCAG AA compliance.</li>
+            <li>Integrated headless CMS (Contentful) for a global e-commerce brand.</li>
+          </ul>
+        </div>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><h3>Front-End Developer</h3><div class="company">Freelance</div></div>
+            <span class="dates">2019 – 2022</span>
+          </div>
+          <ul>
+            <li>Delivered 20+ projects for startups in fintech, health, and e-commerce.</li>
+            <li>Built REST &amp; GraphQL APIs with Node.js and deployed on AWS.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2>Education</h2>
+        <div class="resume-entry">
+          <div class="resume-entry-header">
+            <div><h3>B.S. Computer Science</h3><div class="company">University of California, Berkeley</div></div>
+            <span class="dates">2015 – 2019</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-item">React / Next.js<div class="bar-track"><div class="bar-fill" style="width:92%"></div></div></div>
+              <div class="skill-bar-item">TypeScript<div class="bar-track"><div class="bar-fill" style="width:88%"></div></div></div>
+              <div class="skill-bar-item">CSS / Tailwind<div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Backend</h3>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-item">Node.js<div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
+              <div class="skill-bar-item">Python<div class="bar-track"><div class="bar-fill" style="width:75%"></div></div></div>
+              <div class="skill-bar-item">PostgreSQL<div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Design</h3>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-item">Figma<div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
+              <div class="skill-bar-item">UX Research<div class="bar-track"><div class="bar-fill" style="width:78%"></div></div></div>
+              <div class="skill-bar-item">Motion Design<div class="bar-track"><div class="bar-fill" style="width:65%"></div></div></div>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>DevOps</h3>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar-item">Docker / K8s<div class="bar-track"><div class="bar-fill" style="width:72%"></div></div></div>
+              <div class="skill-bar-item">AWS<div class="bar-track"><div class="bar-fill" style="width:70%"></div></div></div>
+              <div class="skill-bar-item">CI/CD<div class="bar-track"><div class="bar-fill" style="width:82%"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ CASE STUDIES ════ -->
+    <section id="casestudies" class="page">
+      <p class="section-label">Case Studies</p>
+      <h1>Selected Work</h1>
+      <p style="margin-top:.75rem;max-width:520px;">A deep-dive into projects I've owned end-to-end — from discovery to delivery.</p>
+
+      <div class="cs-grid">
+
+        <!-- Case Study 1 -->
+        <div class="cs-card">
+          <div class="cs-banner" style="background:linear-gradient(135deg,#0e1f14,#132a1c);">
+            <span>📊</span>
+            <span class="cs-num">Case Study 01</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-meta">
+              <span class="tag">UX Design</span>
+              <span class="tag">React</span>
+              <span class="tag">2024</span>
+            </div>
+            <h2>SaaS Dashboard Redesign</h2>
+            <p><strong style="color:var(--text)">Problem:</strong> Users were abandoning the dashboard within 90 seconds due to cognitive overload and unclear data hierarchy.</p>
+            <p><strong style="color:var(--text)">Approach:</strong> Ran 12 usability interviews, built card-sort and tree-test sessions, then redesigned the information architecture. Prototyped in Figma, implemented in React with a custom charting layer.</p>
+            <p><strong style="color:var(--text)">Outcome:</strong> Shipped in Q3 2024 after two rounds of moderated testing.</p>
+            <div class="cs-outcomes">
+              <div class="cs-outcome"><div class="val">-22%</div><div class="key">Churn rate</div></div>
+              <div class="cs-outcome"><div class="val">+35%</div><div class="key">Session length</div></div>
+              <div class="cs-outcome"><div class="val">4.8★</div><div class="key">User satisfaction</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="cs-card">
+          <div class="cs-banner" style="background:linear-gradient(135deg,#101e2a,#0d1a24);">
+            <span>🛒</span>
+            <span class="cs-num">Case Study 02</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-meta">
+              <span class="tag">Full-Stack</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">2023</span>
+            </div>
+            <h2>Headless E-Commerce Platform</h2>
+            <p><strong style="color:var(--text)">Problem:</strong> A mid-size retailer's legacy monolith couldn't handle seasonal traffic spikes and had a 4-second average page load.</p>
+            <p><strong style="color:var(--text)">Approach:</strong> Migrated to a headless architecture — Next.js frontend, Shopify Storefront API, Vercel edge network. Built a bespoke search with Algolia and integrated a real-time inventory sync.</p>
+            <p><strong style="color:var(--text)">Outcome:</strong> Zero downtime migration over a single weekend rollout.</p>
+            <div class="cs-outcomes">
+              <div class="cs-outcome"><div class="val">0.9s</div><div class="key">Avg. load time</div></div>
+              <div class="cs-outcome"><div class="val">50k+</div><div class="key">Monthly users</div></div>
+              <div class="cs-outcome"><div class="val">+18%</div><div class="key">Conversion rate</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="cs-card">
+          <div class="cs-banner" style="background:linear-gradient(135deg,#1f150e,#2a180a);">
+            <span>⚡</span>
+            <span class="cs-num">Case Study 03</span>
+          </div>
+          <div class="cs-body">
+            <div class="cs-meta">
+              <span class="tag">Real-Time</span>
+              <span class="tag">WebSocket</span>
+              <span class="tag">2022</span>
+            </div>
+            <h2>Real-Time Analytics Dashboard</h2>
+            <p><strong style="color:var(--text)">Problem:</strong> An ops team was refreshing static reports every 5 minutes to monitor live KPIs — missing critical anomalies.</p>
+            <p><strong style="color:var(--text)">Approach:</strong> Built a Node.js WebSocket server streaming events from Kafka. Designed a configurable widget grid in React where teams could pin, resize, and alert-threshold any metric.</p>
+            <p><strong style="color:var(--text)">Outcome:</strong> Replaced three legacy tools and reduced incident response time significantly.</p>
+            <div class="cs-outcomes">
+              <div class="cs-outcome"><div class="val">&lt;200ms</div><div class="key">Data latency</div></div>
+              <div class="cs-outcome"><div class="val">-60%</div><div class="key">Incident response</div></div>
+              <div class="cs-outcome"><div class="val">3→1</div><div class="key">Tools consolidated</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>
