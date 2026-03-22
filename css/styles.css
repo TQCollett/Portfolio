@@ -200,40 +200,381 @@ hr.divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0
 .bar-track { flex: 1; height: 4px; background: #222; border-radius: 99px; overflow: hidden; }
 .bar-fill { height: 100%; background: var(--green); border-radius: 99px; }
 
-/* ── CASE STUDIES ── */
-.cs-grid { display: flex; flex-direction: column; gap: 2rem; margin-top: 1.5rem; }
-.cs-card {
+/* ── CASE STUDY FEED (listing page) ── */
+.cs-feed { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 1.5rem; margin-top: 2rem; }
+.cs-feed-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
-  transition: border-color .2s;
+  cursor: pointer;
+  transition: border-color .2s, transform .2s;
+  display: flex; flex-direction: column;
 }
-.cs-card:hover { border-color: var(--green-dim); }
-.cs-banner {
-  height: 180px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 3rem;
-  position: relative;
+.cs-feed-card:hover { border-color: var(--green-dim); transform: translateY(-4px); }
+.cs-feed-accent { height: 5px; flex-shrink: 0; }
+.cs-feed-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.cs-feed-num { font-size: .68rem; text-transform: uppercase; letter-spacing: .14em; color: var(--green); font-weight: 700; margin-bottom: .55rem; }
+.cs-feed-card h2 { font-size: 1.15rem; margin-bottom: .65rem; line-height: 1.3; }
+.cs-feed-excerpt { font-size: .875rem; line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+.cs-feed-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.cs-meta { display: flex; gap: .5rem; flex-wrap: wrap; }
+.cs-read-link { font-size: .8rem; font-weight: 700; color: var(--green); display: inline-flex; align-items: center; gap: .25rem; white-space: nowrap; }
+
+/* ── CASE STUDY DETAIL PAGE ── */
+.cs-detail-back {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: none; border: 1px solid var(--border);
+  border-radius: 8px; padding: .45rem .9rem;
+  color: var(--muted); font-size: .85rem; font-weight: 500;
+  cursor: pointer; margin-bottom: 2rem;
+  transition: color .15s, border-color .15s;
+  font-family: inherit;
 }
-.cs-banner .cs-num {
-  position: absolute; top: 1rem; left: 1rem;
-  font-size: .7rem; font-weight: 700;
-  color: var(--green); letter-spacing: .1em; text-transform: uppercase;
+.cs-detail-back:hover { color: var(--green); border-color: var(--green-dim); }
+.cs-detail-hero {
+  border-radius: 14px; overflow: hidden; margin-bottom: 2.5rem;
+  min-height: 240px; display: flex; flex-direction: column;
+  align-items: flex-start; justify-content: flex-end;
+  padding: 2rem; position: relative;
 }
-.cs-body { padding: 1.5rem; }
-.cs-meta { display: flex; gap: .75rem; flex-wrap: wrap; margin-bottom: .75rem; }
-.cs-body h2 { margin-bottom: .5rem; }
-.cs-body p { margin-bottom: 1rem; }
-.cs-outcomes { display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 1rem; background: #111; border-radius: 8px; margin-top: 1rem; }
+.cs-detail-hero .cs-num { font-size: .7rem; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.5); font-weight: 700; margin-bottom: .5rem; }
+.cs-detail-hero h1 { font-size: 2rem; color: #fff; line-height: 1.2; }
+.cs-detail-hero .cs-meta { margin-top: .9rem; }
+.cs-detail-content { display: flex; flex-direction: column; gap: 1.25rem; padding-bottom: 3rem; }
+.cs-block { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+.cs-block h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; color: var(--green); margin-bottom: .6rem; font-weight: 700; }
+.cs-block p { font-size: .9rem; line-height: 1.75; margin-bottom: .75rem; }
+.cs-block p:last-child { margin-bottom: 0; }
+.cs-block-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.cs-outcomes { display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 1.25rem; background: #111; border-radius: 10px; border: 1px solid var(--border); }
 .cs-outcome .val { font-size: 1.4rem; font-weight: 800; color: var(--green); }
 .cs-outcome .key { font-size: .75rem; color: var(--muted); margin-top: .1rem; }
+
+/* ══════════════════════════════════════════
+   MATERIAL DESIGN PAGE — Light purple theme
+   ══════════════════════════════════════════ */
+.main.theme-material { background: #fff; }
+
+#cs-materialdesign { position: relative; }
+
+/* Hero — match card style */
+#cs-materialdesign .cs-detail-hero {
+  border: 1px solid rgba(84,66,131,.2);
+  box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+#cs-materialdesign .cs-detail-hero .cs-num { color: rgba(84,66,131,.55); }
+#cs-materialdesign .cs-detail-hero h1 { color: #4a148c; }
+
+/* Back button */
+#cs-materialdesign .cs-detail-back {
+  color: #4a148c;
+  border-color: rgba(74,20,140,.3);
+  background: rgba(255,255,255,.6);
+}
+#cs-materialdesign .cs-detail-back:hover {
+  color: #311b92;
+  border-color: #311b92;
+  background: rgba(255,255,255,.9);
+}
+
+/* Content cards */
+#cs-materialdesign .cs-block {
+  background: #EDE6FF;
+  border-color: rgba(84,66,131,.2);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+#cs-materialdesign .cs-block h2 { color: #4a148c; }
+#cs-materialdesign .cs-block p  { color: #37474f; }
+
+/* Tags */
+#cs-materialdesign .tag {
+  background: rgba(74,20,140,.12);
+  color: #4a148c;
+  border-color: rgba(74,20,140,.3);
+}
+
+/* Images */
+#cs-materialdesign .cs-img-wrap {
+  background: #f3e5f5;
+  border-color: rgba(74,20,140,.15);
+}
+#cs-materialdesign .cs-img-caption { color: #7b1fa2; }
+
+/* Outcomes bar */
+#cs-materialdesign .cs-outcomes {
+  background: #4a148c;
+  border-color: #4a148c;
+  box-shadow: 0 4px 4px rgba(0,0,0,.25);
+}
+#cs-materialdesign .cs-outcomes .val { color: #ce93d8; }
+#cs-materialdesign .cs-outcomes .key { color: rgba(255,255,255,.65); }
+
+/* ── Search Atlas color overrides ─────────────────────────────────── */
+#cs-searchatlas {
+  background: #08060f;
+  margin: -3rem -4rem;
+  padding: 3rem 4rem;
+}
+
+/* Back button */
+#cs-searchatlas .cs-detail-back {
+  color: rgba(255,255,255,.6);
+  border-color: rgba(160,120,255,.2);
+  background: rgba(255,255,255,.05);
+}
+#cs-searchatlas .cs-detail-back:hover {
+  color: #c4a8ff;
+  border-color: rgba(160,120,255,.5);
+  background: rgba(255,255,255,.08);
+}
+
+/* Hero */
+#cs-searchatlas .cs-detail-hero {
+  background: linear-gradient(315deg, #424DC5 15%, #3F007C 32%, #000000 42%) !important;
+  border: 1px solid #5c3a9e;
+  box-shadow: 0 4px 2px rgba(184,143,255,.25);
+  border-radius: 12px;
+}
+#cs-searchatlas .cs-detail-hero .cs-num { color: rgba(180,150,255,.5); }
+#cs-searchatlas .cs-detail-hero h1      { color: #fff; }
+
+/* Content cards */
+#cs-searchatlas .cs-block {
+  background: linear-gradient(315deg, #424DC5 15%, #3F007C 32%, #000000 42%);
+  border-color: #5c3a9e;
+  box-shadow: 0 4px 2px rgba(184,143,255,.25);
+}
+#cs-searchatlas .cs-block h2 { color: #fff; }
+#cs-searchatlas .cs-block p  { color: rgba(255,255,255,.82); }
+
+/* What is Search Atlas — full-width card with image on right */
+#cs-searchatlas .sa-what-block {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+#cs-searchatlas .sa-what-img { margin: 0; }
+#cs-searchatlas .sa-flip { grid-template-columns: 2fr 1fr; }
+@media (max-width: 700px) {
+  #cs-searchatlas .sa-what-block { grid-template-columns: 1fr; }
+}
+
+/* Tags */
+#cs-searchatlas .tag {
+  background: rgba(160,120,255,.15);
+  color: #c4a8ff;
+  border-color: rgba(160,120,255,.3);
+}
+
+/* Images */
+#cs-searchatlas .cs-img-wrap {
+  background: #120a2e;
+  border-color: #5c3a9e;
+}
+#cs-searchatlas .cs-img-caption { color: rgba(196,168,255,.7); }
+
+/* ── Buffalo Bells color overrides ──────────────────────────────────── */
+#cs-buffalobells {
+  background: #a4c8d8;
+  margin: -3rem -4rem;
+  padding: 3rem 4rem;
+}
+
+/* Back button */
+#cs-buffalobells .cs-detail-back {
+  color: #1c2d5a;
+  border-color: rgba(28,45,90,.3);
+  background: rgba(255,255,255,.5);
+}
+#cs-buffalobells .cs-detail-back:hover {
+  color: #0d1b3a;
+  border-color: rgba(28,45,90,.6);
+  background: rgba(255,255,255,.8);
+}
+
+/* Hero */
+#cs-buffalobells .cs-detail-hero {
+  background: #fff !important;
+  border: 1px solid rgba(28,45,90,.15);
+  box-shadow: 0 4px 4px rgba(28,45,90,.15);
+  border-radius: 12px;
+}
+#cs-buffalobells .cs-detail-hero .cs-num { color: rgba(28,45,90,.45); }
+#cs-buffalobells .cs-detail-hero h1      { color: #1c2d5a; }
+
+/* Cards */
+#cs-buffalobells .cs-block {
+  background: #fff;
+  border-color: rgba(28,45,90,.15);
+  box-shadow: 0 4px 4px rgba(28,45,90,.15);
+}
+#cs-buffalobells .cs-block h2 { color: #1c2d5a; }
+#cs-buffalobells .cs-block p  { color: #1a1a2e; }
+
+/* Tags */
+#cs-buffalobells .tag {
+  background: rgba(28,45,90,.1);
+  color: #1c2d5a;
+  border-color: rgba(28,45,90,.25);
+}
+
+/* Image frames */
+#cs-buffalobells .cs-img-wrap  { background: transparent; border: none; }
+.cs-img-row.bb-pattern-row { background: rgba(186,217,228,.7); border-radius: 8px; padding: .75rem; }
+.cs-img-row.bb-matched-height { grid-template-columns: 3fr 2fr 1fr !important; background: rgba(186,217,228,.7); border-radius: 8px; padding: .75rem; }
+.bb-matched-height .cs-img-wrap { height: 100%;  border-radius: 0; }
+.bb-matched-height .cs-img     { width: 100%; height: auto;}
+#cs-buffalobells .cs-img-caption { color: #1c2d5a; }
+
+/* ── Fish Shop color overrides ───────────────────────────────────────── */
+#cs-fishshop {
+  background: #f5ede2;
+  margin: -3rem -4rem;
+  padding: 3rem 4rem;
+}
+
+/* Back button */
+#cs-fishshop .cs-detail-back {
+  color: #2c1f0e;
+  border-color: rgba(44,31,14,.25);
+  background: rgba(255,255,255,.5);
+}
+#cs-fishshop .cs-detail-back:hover {
+  color: #1a1208;
+  border-color: rgba(44,31,14,.5);
+  background: rgba(255,255,255,.8);
+}
+
+/* Hero */
+#cs-fishshop .cs-detail-hero {
+  background: #e8d4b5 !important;
+  border: none;
+  box-shadow: none;
+  border-radius: 12px;
+}
+#cs-fishshop .cs-detail-hero .cs-num { color: rgba(44,31,14,.45); }
+#cs-fishshop .cs-detail-hero h1      { color: #1a1208; }
+
+/* Cards */
+#cs-fishshop .cs-block {
+  background: #e8d4b5;
+  border: none;
+  box-shadow: none;
+}
+#cs-fishshop .cs-block h2 { color: #1a1208; }
+#cs-fishshop .cs-block p  { color: #2c1f0e; }
+
+/* Tags */
+#cs-fishshop .tag {
+  background: rgba(44,31,14,.1);
+  color: #2c1f0e;
+  border-color: rgba(44,31,14,.2);
+}
+
+/* Text + image side-by-side */
+#cs-fishshop .fs-img-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center; }
+#cs-fishshop .fs-img { margin: 0; }
+@media (max-width: 700px) {
+  #cs-fishshop .fs-img-right { grid-template-columns: 1fr; }
+}
+
+/* Image frames */
+#cs-fishshop .cs-img-wrap { background: rgba(0,0,0,.06); border-color: rgba(44,31,14,.1); }
+#cs-fishshop .cs-img-caption { color: rgba(44,31,14,.6); }
+
+/* Shape layers */
+.md-shapes-back,
+.md-shapes-front {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.md-shapes-back  { z-index: 0; }   /* large, light — behind content */
+.md-shapes-front { z-index: 3; }   /* small, dark  — in front of content */
+.md-shape { position: absolute; }
+
+/* Keep content, back button, hero, and overlap sections below the foreground shapes (z:3) */
+#cs-materialdesign .cs-detail-back,
+#cs-materialdesign .cs-detail-hero,
+#cs-materialdesign .cs-detail-content { position: relative; z-index: 1; }
+
+/* Overlap layout — image column pulls up into the section above */
+.cs-side-overlap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: end;
+  margin-top: -2rem;
+  position: relative;
+  z-index: 2;
+}
+.cs-side-overlap .cs-img-col  { transform: translateY(-2.5rem); }
+.cs-side-overlap .cs-block    { margin: 0; }
+
+/* ── CS Side-by-side (text left, image right) ── */
+.cs-side-img { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: start; }
+.cs-side-img .cs-block { margin: 0; }
+.cs-img-col { display: flex; flex-direction: column; gap: .75rem; }
+.cs-block-col { display: flex; flex-direction: column; gap: 1.25rem; }
+
+/* ── CS Images ── */
+.cs-img-wrap { margin-top: 1.25rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: #111; }
+.cs-img { width: 100%; display: block; height: auto; }
+.cs-img-row { display: grid; gap: .75rem; margin-top: 1.25rem; }
+.cs-img-row.cols-2 { grid-template-columns: 1fr 1fr; }
+.cs-img-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.cs-img-row .cs-img-wrap { margin: 0; }
+.cs-img-caption { font-size: .72rem; color: var(--muted); text-align: center; margin-top: .4rem; letter-spacing: .04em; }
+
+/* ── Elevation / Contrast image-text grid ── */
+#cs-materialdesign .md-img-text-row {
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+}
+#cs-materialdesign .md-img-text-row.img-left {
+  grid-template-columns: 45% 1fr;
+  grid-template-areas: "img heading" "img body";
+}
+#cs-materialdesign .md-img-text-row.img-right {
+  grid-template-columns: 1fr 45%;
+  grid-template-areas: "heading img" "body img";
+}
+#cs-materialdesign .md-img-text-row > h2       { grid-area: heading; margin-bottom: .6rem; }
+#cs-materialdesign .md-img-text-row > .md-img-col  { grid-area: img; }
+#cs-materialdesign .md-img-text-row > .md-body-col { grid-area: body; }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .main { padding: 2rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; }
   .avatar-box { max-width: 200px; }
+  .md-shapes-front { display: none; }
+  #cs-materialdesign .md-img-text-row,
+  #cs-materialdesign .md-img-text-row.img-left,
+  #cs-materialdesign .md-img-text-row.img-right { display: flex; flex-direction: column; }
+  #cs-materialdesign .md-img-text-row > h2          { order: 1; margin-bottom: .4rem; }
+  #cs-materialdesign .md-img-text-row > .md-img-col { order: 2; }
+  #cs-materialdesign .md-img-text-row > .md-body-col{ order: 3; }
+}
+@media (max-width: 700px) {
+  .md-shapes-front { display: none; }
+  .cs-block-row { grid-template-columns: 1fr; }
+  .cs-img-row.cols-2, .cs-img-row.cols-3 { grid-template-columns: 1fr; }
+  .cs-side-img, .cs-side-overlap { grid-template-columns: 1fr; }
+  .cs-side-overlap { margin-top: 0; }
+  .cs-side-overlap .cs-img-col { transform: none; }
+  .cs-detail-hero { min-height: 180px; padding: 1.5rem; }
+  .cs-detail-hero h1 { font-size: 1.5rem; }
+}
+@media (max-width: 900px) {
+  #cs-searchatlas  { margin: -2rem -1.5rem; padding: 2rem 1.5rem; }
+  #cs-buffalobells { margin: -2rem -1.5rem; padding: 2rem 1.5rem; }
+  #cs-fishshop     { margin: -2rem -1.5rem; padding: 2rem 1.5rem; }
 }
 @media (max-width: 600px) {
   .sidebar { width: 60px; min-width: 60px; padding: 1.5rem .5rem; gap: 1.5rem; }
@@ -241,4 +582,7 @@ hr.divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0
   nav a { justify-content: center; padding: .7rem; }
   .main { padding: 1.5rem 1rem; }
   h1 { font-size: 1.9rem; }
+  #cs-searchatlas  { margin: -1.5rem -1rem; padding: 1.5rem 1rem; }
+  #cs-buffalobells { margin: -1.5rem -1rem; padding: 1.5rem 1rem; }
+  #cs-fishshop     { margin: -1.5rem -1rem; padding: 1.5rem 1rem; }
 }

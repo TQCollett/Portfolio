@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.figma.com)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\tyler\\\\OneDrive\\\\Desktop\\\\Web stuff\\\\Portfolio\\\\Portfolio\\\\convert-shapes.ps1\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\tyler\\\\OneDrive\\\\Desktop\\\\Web stuff\\\\Portfolio\\\\Portfolio\\\\convert-widths.ps1\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\tyler\\\\OneDrive\\\\Desktop\\\\Web stuff\\\\Portfolio\\\\Portfolio\\\\scale-widths.ps1\")"
+    ]
+  }
+}
