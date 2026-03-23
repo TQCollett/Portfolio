@@ -64,6 +64,19 @@ nav a:hover { background: #1e1e1e; color: var(--text); }
 nav a.active { background: rgba(0,230,118,.1); color: var(--green); }
 nav a svg { flex-shrink: 0; }
 
+.sidebar-social {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  margin-bottom: .5rem;
+}
+.sidebar-social a {
+  color: #666;
+  transition: color .2s;
+}
+.sidebar-social a:hover {
+  color: #fff;
+}
 .sidebar-footer {
   font-size: .7rem;
   color: #444;
